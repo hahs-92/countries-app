@@ -1,0 +1,43 @@
+.Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+}
+
+.Title h1 {
+    color: var(--VeryDarkBlueLightModeText);
+}
+
+.Theme {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90px;
+    height: 35px;
+}
+
+.Theme__icon {
+    width: 16px;
+    height: 16px;
+    background: url('../../assets/moon.svg') no-repeat;
+    background-position: center;
+}
+
+.Theme__button {
+    border: none;
+    background-color: var(--WhiteDarkModeTextAndLightModeElements);
+    font-size: 1.4rem;
+    cursor: pointer;
+    outline: none;
+}
+
+
+/* _____________________________MEDIAQUERIES__________________________________ */
+
+@media (min-width: 610px) {
+    .Header {
+        width: 95%;
+        max-width: 1200px;
+    }
+}

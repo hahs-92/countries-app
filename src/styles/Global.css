@@ -1,0 +1,43 @@
+* {
+    /* Colors */
+    /* Neutral */
+
+    --DarkBlueDarkModeElements: hsl(209, 23%, 22%);
+    --VeryDarkBlueDarkModeBG: hsl(207, 26%, 17%);
+    --VeryDarkBlueLightModeText: hsl(200, 15%, 8%);
+    --DarkGrayLightModeInput: hsl(0, 0%, 52%);
+    --VeryLightGrayLightModeBG: hsl(0, 0%, 98%);
+    --WhiteDarkModeTextAndLightModeElements: hsl(0, 0%, 100%);
+
+    /* ## Typography
+
+    ### Body Copy
+
+    - Homepage Items: 14px
+    - Detail Page: 16px 
+
+    ### Fonts
+
+    - Family: [Nunito Sans](https://fonts.google.com/specimen/Nunito+Sans)
+    - Weights: 300, 600, 800 */
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+h1 {
+    font-size: 1.8rem;
+}
+
+h2 {
+    font-size: 1.6rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+}
