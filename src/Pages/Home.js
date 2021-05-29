@@ -18,13 +18,14 @@ function Home() {
   const [ data, setData ]  = useState([])
 
   const getData = async(url) => {
-    const data = await fetch(url)
-    const response = await data.json()
+    const info = await fetch(url)
+    const response = await info.json()
+    setData(response)
   }
 
-  // useEffect(() => {
-  //   getData()
-  // },[])
+  useEffect(() => {
+    getData(BASEURL)
+  },[])
 
 
   return (
@@ -72,7 +73,13 @@ function Home() {
         </section>
 
       <section className={ styles.Main }>
-        <CardMain />
+
+       {
+         data.length > 0  &&
+          data.map(item => (
+            <CardMain key={ item.name } img={ item.flag } title={ item.name } population={ item.population } region={ item.region } capital={ item.capital } />
+          ))
+       }
       </section>
 
     </section>
