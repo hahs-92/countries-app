@@ -1,0 +1,45 @@
+.Country {
+    display: grid;
+    grid-template: 90px  120px minmax(200px, auto) / minmax(320px , 1fr);
+    background-color: var(--VeryLightGrayLightModeBG);
+}
+
+
+.Header {
+    grid-area: 1 / 1 / 2 / 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--WhiteDarkModeTextAndLightModeElements);
+    box-shadow: 1px 1px 6px var(--DarkGrayLightModeInput);
+}
+.Button {
+    grid-area: 2 / 1 / 3 / 2;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    width: 90%;
+}
+
+.Button a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    border-radius: 5px;
+    height: 30px;
+    background: var(--WhiteDarkModeTextAndLightModeElements);
+    box-shadow: 1px 1px 6px var(--DarkGrayLightModeInput);
+    font-size: 1.4rem;
+    font-weight: 400;
+    text-decoration: none;
+    color: var(--VeryDarkBlueLightModeText);
+    cursor: pointer;
+}
+
+.Main {
+    grid-area: 3 / 1 / 4 / 2;
+    display: flex;
+    justify-content: space-evenly;
+}
+

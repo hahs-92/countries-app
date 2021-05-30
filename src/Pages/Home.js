@@ -77,7 +77,14 @@ function Home() {
        {
          data.length > 0  &&
           data.map(item => (
-            <CardMain key={ item.name } img={ item.flag } title={ item.name } population={ item.population } region={ item.region } capital={ item.capital } />
+            <CardMain 
+              key={ item.name } 
+              img={ item.flag } 
+              title={ item.name } 
+              population={ item.population } 
+              region={ item.region } 
+              capital={ item.capital } 
+              />
           ))
        }
       </section>
