@@ -8,6 +8,7 @@ const CardMain = (props) => {
     const handleClick = () => {
         history.push(`/Country/:${ props.title }`)
     }
+    
     return(
         <article className={ styles.CardMain } onClick={ handleClick }>
             <section className={ styles.Image }>

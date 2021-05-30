@@ -15,15 +15,18 @@ const Country = () => {
     id = id.replace(':', '')
 
     const getData = async() => {
-        const data = await fetch(`https://restcountries.eu/rest/v2/name/${ id }`)
-        const responde = await data.json()
-        setData(responde)
-        console.log(responde)
+        try {     
+            const data = await fetch(`https://restcountries.eu/rest/v2/name/${ id }`)
+            const responde = await data.json()
+            setData(responde)
+        } catch (error) {
+            console.error(error)
+        }
     }
 
     useEffect(() => {
         getData()
-    },[])
+    },[id])
 
     return(
         <section className={ styles.Country }>
@@ -48,7 +51,7 @@ const Country = () => {
                                 subRegion={ item.subregion }
                                 capital={ item.capital }
                                 domain={ item.topLevelDomain }
-                                currencies={ item.currencies[0].name }
+                                currencies={ item.currencies }
                                 languages={ item.languages }
                                 borders={ item.borders }
                             />

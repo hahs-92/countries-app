@@ -11,26 +11,36 @@ const CardCountry = (props) => {
                 </section>
 
                 <section className={ styles.Content }>
-                    <div>
+                    <div className={ styles.Content__title }>
                         <h1>{ props.name }</h1>
                     </div>
 
-                    <div>
+                    <div className={ styles.Content__info1 }> 
                         <h3><strong>Native Name: </strong>{ props.nativeName }</h3>   
                         <h3><strong>Population: </strong>{ props.population }</h3>
                         <h3><strong>Sub Region: </strong>{ props.subRegion }</h3>
                         <h3><strong>Capital: </strong>{ props.capital }</h3>
                     </div>
 
-                    <div>
-                        <div>
+                    <div className={ styles.Content__info2 }>
+                        <div >
                             <h3><strong>Top Level Domain: </strong>{ props.domain }</h3>
-                            <h3><strong>Currencies: </strong>{ props.currencies }</h3>
+                            {/* <h3><strong>Currencies: </strong>{ props.currencies }</h3> */}
+
+                            <h3><strong>Currencies: </strong>
+                                {
+                                    props.currencies && 
+                                        props.currencies.map(item => (
+                                            <span key={ item } >{ item.name }</span>
+                                        ))
+                                }
+                            </h3>
+
                             <h3><strong>Languages: </strong>
                                {
                                    props.languages &&
                                     props.languages.map(item => (  
-                                        <span key={ item.name }>{ item.name}</span> 
+                                        <span key={ item.name }>{ item.name}  </span> 
                                     ))
                                }
                             </h3>
