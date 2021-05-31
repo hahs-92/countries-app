@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 //COMPONENTS
 import IconMoon from './IconMoon'
 //ESTILOS
@@ -12,9 +12,23 @@ import AppContext from '../context/AppContext'
 const Header = () => {
     const { darkMode, setDarkMode } = useContext(AppContext)
 
-    const handleClick = () => {
-        setDarkMode(!darkMode)
-    }
+    //USE EFFECTS PARA MANEJAR SI EL USUARIO ESTA EN MODO OSCURO
+    useEffect(() => {
+        let local = localStorage.getItem('darkMode','true')
+        if(local === 'true'){
+            setDarkMode(true)
+        }
+        else{
+            setDarkMode(false)
+        }
+    },[])
+
+    useEffect(()=> {
+        darkMode ? window.localStorage.setItem('darkMode', 'true') :  window.localStorage.setItem('darkMode', 'false')
+    },[darkMode])
+
+    const handleClick = () => setDarkMode(!darkMode)
+
 
     return (
         <header className={ styles.Header }>
