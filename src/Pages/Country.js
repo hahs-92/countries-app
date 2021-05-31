@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom'
 //COMPONENTS
 import Header from '../components/Header'
 import CardCountry from '../components/CardCountry'
+import IconLeftArrow from '../components/IconLeftArrow'
 //ESTILOS
 import styles from '../styles/Country.module.css'
 
@@ -35,7 +36,10 @@ const Country = () => {
             </section>
 
             <section className={ styles.Button }>
-                <Link to='/'>Back</Link>
+                <div className={ styles.Button__container }>
+                    <IconLeftArrow width='16'/>
+                    <Link to='/'>Back</Link>
+                </div>
             </section>
 
             <section className={ styles.Main }>    

@@ -21,20 +21,24 @@
     width: 90%;
 }
 
-.Button a {
+.Button__container {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80px;
+    width: 100px;
     border-radius: 5px;
     height: 30px;
     background: var(--WhiteDarkModeTextAndLightModeElements);
     box-shadow: 1px 1px 6px var(--DarkGrayLightModeInput);
-    font-size: 1.4rem;
-    font-weight: 400;
-    text-decoration: none;
-    color: var(--VeryDarkBlueLightModeText);
     cursor: pointer;
+}
+
+.Button__container a {
+    margin-left: 8px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--VeryDarkBlueLightModeText);
+    text-decoration: none;
 }
 
 .Main {

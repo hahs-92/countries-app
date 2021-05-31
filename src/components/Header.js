@@ -1,3 +1,5 @@
+//COMPONENTS
+import IconMoon from './IconMoon'
 //ESTILOS
 import styles from '../styles/components/Header.module.css'
 
@@ -11,10 +13,10 @@ const Header = () => {
 
             <section className={ styles.Theme }>
                 <div className={ styles.Theme__icon}>
-                     
+                     <IconMoon width='16px' height='16px'/>
                 </div>
                 <button className={ styles.Theme__button } type='button' aria-label='ButtonTheme' >
-                    DarkMode
+                    Dark Mode
                 </button>
                 
             </section>

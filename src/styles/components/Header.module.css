@@ -20,14 +20,16 @@
 .Theme__icon {
     width: 16px;
     height: 16px;
-    background: url('../../assets/moon.svg') no-repeat;
-    background-position: center;
+    /* background: url('../../assets/moon.svg') no-repeat;
+    background-position: center; */
 }
 
 .Theme__button {
     border: none;
     background-color: var(--WhiteDarkModeTextAndLightModeElements);
+    font-family: var(--fontFamily);
     font-size: 1.4rem;
+    font-weight: 600;
     cursor: pointer;
     outline: none;
 }

@@ -2,12 +2,11 @@ import { useEffect, useState } from 'react';
 //ESTILOS
 import '../styles/Global.css'
 import styles from '../styles/Home.module.css'
-//IMAGES
-import iconSearch from '../assets/search-interface-symbol.svg'
-import iconArrow from '../assets/down-arrow.svg'
 //COMPONENTS
 import CardMain from '../components/CardMain'
 import Header from '../components/Header'
+import IconSearch from '../components/IconSearch'
+import IconDownArrow from '../components/IconDownArrow'
 
 
 // _________________________________________________________________________________________
@@ -66,7 +65,8 @@ function Home() {
 
         <article className={ styles.Search }>
           <div className={ styles.Search__icon }>
-            <img src={ iconSearch } alt="search-icon" />
+            {/* <img src={ iconSearch } alt="search-icon" /> */}
+            <IconSearch width='20' height='20' fill='hsl(0, 0%, 52%)' />
           </div>
           <div className={ styles.Search__input }>
             <input type="text" placeholder='Search for a country...'  onChange={ handleOnChange }/>
@@ -79,7 +79,8 @@ function Home() {
               <h3>Filter by region</h3>
             </div>
             <div className={ styles.Filter__icon } onClick={ handleClick }>
-              <img src={ iconArrow } alt="arrow-icon" />
+              {/* <img src={ iconArrow } alt="arrow-icon" /> */}
+              <IconDownArrow width='13' height='13' />
             </div>
           </section>
         </article>
