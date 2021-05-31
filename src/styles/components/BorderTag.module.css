@@ -13,4 +13,20 @@
 
 .BorderTag .Tag  {
     margin: 0; 
+    color: var(--VeryDarkBlueLightModeText);
 }
+
+/* ____________________________DARKMODE_________________________________ */
+
+.BorderTag__darkMode {
+    background-color: var(--DarkBlueDarkModeElements);
+    box-shadow: 1px 1px 6px var(--VeryDarkBlueLightModeText);
+}
+
+.BorderTag__darkMode .Tag {
+    color: var(--WhiteDarkModeTextAndLightModeElements);
+}
+
+
+
+

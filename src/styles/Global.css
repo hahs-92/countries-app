@@ -10,17 +10,13 @@
     --VeryLightGrayLightModeBG: hsl(0, 0%, 98%);
     --WhiteDarkModeTextAndLightModeElements: hsl(0, 0%, 100%);
 
-    /* ## Typography
-
-    ### Body Copy
-
-    - Homepage Items: 14px
+    /* - Homepage Items: 14px
     - Detail Page: 16px 
 
     ### Fonts
     
     - Family: [Nunito Sans](https://fonts.google.com/specimen/Nunito+Sans)
-    - Weights: 300, 600, 800 */
+    - Weights: 300, 600, 800  */
     --fontFamily: 'Nunito Sans', sans-serif;
 
     margin: 0;

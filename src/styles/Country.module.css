@@ -1,7 +1,8 @@
 .Country {
     display: grid;
-    grid-template: 90px  120px minmax(200px, auto) / minmax(320px , 1fr);
+    grid-template: 90px  120px 80vh/ minmax(320px , 1fr);
     background-color: var(--VeryLightGrayLightModeBG);
+    color: var(--VeryDarkBlueLightModeText);
 }
 
 
@@ -47,3 +48,23 @@
     justify-content: space-evenly;
 }
 
+/* _________________________________________DARKMODE_______________________________________ */
+
+.Country__darkMode {
+    background-color: var(--VeryDarkBlueDarkModeBG);
+    color: var(--WhiteDarkModeTextAndLightModeElements);
+}
+
+.Header__darkMode {
+    background-color: var(--DarkBlueDarkModeElements);
+    box-shadow: 1px 1px 6px var(--VeryDarkBlueLightModeText);
+}
+
+.Button__container__darkMode {
+    background-color: var(--DarkBlueDarkModeElements);
+    box-shadow: 1px 1px 6px var(--VeryDarkBlueLightModeText);
+}
+
+.Button__container__darkMode a {
+    color: var(--WhiteDarkModeTextAndLightModeElements);
+}

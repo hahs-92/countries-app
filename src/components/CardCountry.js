@@ -3,6 +3,8 @@ import BorderTag from './BorderTag'
 // ESTILOS
 import styles from '../styles/components/CardCountry.module.css'
 
+// ________________________________________________________________________
+
 const CardCountry = (props) => {
     return(
         <article className={ styles.CardCountry }>

@@ -1,4 +1,4 @@
-import { useEffect,useState } from 'react'
+import { useEffect,useState, useContext } from 'react'
 import { useParams, Link } from 'react-router-dom'
 //COMPONENTS
 import Header from '../components/Header'
@@ -6,11 +6,14 @@ import CardCountry from '../components/CardCountry'
 import IconLeftArrow from '../components/IconLeftArrow'
 //ESTILOS
 import styles from '../styles/Country.module.css'
+//CONTEXT
+import AppContext from '../context/AppContext'
 
 // _________________________________________________________________________________________
 
 
 const Country = () => {
+    const { darkMode } = useContext(AppContext)
     const [ data, setData ] = useState([])
     let { id } = useParams()
     id = id.replace(':', '')
@@ -30,15 +33,26 @@ const Country = () => {
     },[id])
 
     return(
-        <section className={ styles.Country }>
-            <section className={ styles.Header }>
+        <section className={ darkMode ? `${ styles.Country } ${ styles.Country__darkMode}`: styles.Country  }>
+            <section className={ darkMode ? `${ styles.Header } ${ styles.Header__darkMode}`: styles.Header  }>
                 <Header />
             </section>
 
-            <section className={ styles.Button }>
-                <div className={ styles.Button__container }>
-                    <IconLeftArrow width='16'/>
-                    <Link to='/'>Back</Link>
+            <section className={  styles.Button }>
+                <div className={ darkMode ? `${ styles.Button__container } ${ styles.Button__container__darkMode}`: styles.Button__container }>
+                    {
+                        darkMode
+                            ?
+                            <>
+                                <IconLeftArrow width='16' fill='hsl(0, 0%, 100%)'/>
+                                <Link to='/'>Back</Link>
+                            </>
+                            :
+                            <>
+                                <IconLeftArrow width='16' fill='hsl(0, 0%, 52%)'/>
+                                <Link to='/'>Back</Link>
+                            </>
+                    }
                 </div>
             </section>
 

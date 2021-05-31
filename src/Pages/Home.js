@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 //ESTILOS
 import '../styles/Global.css'
 import styles from '../styles/Home.module.css'
@@ -7,12 +7,16 @@ import CardMain from '../components/CardMain'
 import Header from '../components/Header'
 import IconSearch from '../components/IconSearch'
 import IconDownArrow from '../components/IconDownArrow'
+import Loader from '../components/Loader'
+//CONTEXT
+import AppContext from '../context/AppContext'
 
 
 // _________________________________________________________________________________________
 
 
 function Home() {
+  const { darkMode } = useContext(AppContext)
   const BASEURL = 'https://restcountries.eu/rest/v2/all'
   const URLNAME = 'https://restcountries.eu/rest/v2/name/'
   const URLREGION = 'https://restcountries.eu/rest/v2/region/'
@@ -56,31 +60,42 @@ function Home() {
 
 
   return (
-    <section className={ styles.Home }>
-      <section className= { styles.Header }>
+    <section className={ darkMode ? `${ styles.Home } ${ styles.Home__darkMode}`: styles.Home }>
+      <section className= {  darkMode ? `${ styles.Header } ${ styles.Header__darkMode}`: styles.Header }>
         <Header />
       </section>
 
       <section className={ styles.Inputs }>
 
-        <article className={ styles.Search }>
+        <article className={ darkMode ? `${ styles.Search } ${ styles.Search__darkMode}`: styles.Search }>
           <div className={ styles.Search__icon }>
-            {/* <img src={ iconSearch } alt="search-icon" /> */}
-            <IconSearch width='20' height='20' fill='hsl(0, 0%, 52%)' />
+            {
+              darkMode
+                ?
+                <IconSearch width='20' height='20' fill='hsl(0, 0%, 100%)' />
+                :
+                <IconSearch width='20' height='20' fill='hsl(0, 0%, 52%)' />
+            }
           </div>
-          <div className={ styles.Search__input }>
+          <div className={ darkMode ? `${ styles.Search__input } ${ styles.Search__input__darkMode}`: styles.Search__input }>
             <input type="text" placeholder='Search for a country...'  onChange={ handleOnChange }/>
           </div>
         </article>
 
         <article className={ styles.SearchFilter }>
-          <section className={ styles.Filter }>
+          <section className={ darkMode ? `${ styles.Filter } ${ styles.Filter__darkMode}`: styles.Filter }>
+
             <div className={ styles.Filter__title }>
               <h3>Filter by region</h3>
             </div>
             <div className={ styles.Filter__icon } onClick={ handleClick }>
-              {/* <img src={ iconArrow } alt="arrow-icon" /> */}
-              <IconDownArrow width='13' height='13' />
+              {
+                darkMode
+                ?
+                <IconDownArrow width='13' height='13' fill='hsl(0, 0%, 100%)' />
+                :
+                <IconDownArrow width='13' height='13'  fill='hsl(0, 0%, 52%)'/>
+              }
             </div>
           </section>
         </article>
@@ -88,8 +103,8 @@ function Home() {
       </section>
 
       <section className={ !isOptions ? `${ styles.Options }`: `${ styles.Options } ${ styles.OptionsActive }` }>
-        <div className={ styles.Options__container }>
-          <div className={ styles.Options__filter }>
+        <div className={ darkMode ? `${ styles.Options__container } ${ styles.Options__container__darkMode}`: styles.Options__container }>
+          <div className={ darkMode ? `${ styles.Options__filter } ${ styles.Options__filter__darkMode}`: styles.Options__filter  }>
             <ul>
               <li onClick={ handleClickOptions }>Africa</li>
               <li onClick={ handleClickOptions }>Americas</li>
@@ -117,7 +132,7 @@ function Home() {
               />
           ))
         :
-            <h1>Loading...</h1>
+            <Loader />
        }
       </section>
 

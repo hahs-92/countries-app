@@ -1,11 +1,18 @@
-import { useRef } from 'react'
+import { useRef, useContext } from 'react'
 import {  useHistory } from 'react-router-dom'
 //HOOKS
 import  { useIntersectionObserver } from '../hooks/useIntersectionBrowser'
 //ESTILOS
 import styles from '../styles/components/CardMain.module.css'
+//CONTEXT
+import AppContext from '../context/AppContext'
+
+
+// ________________________________________________________________________
+
 
 const CardMain = (props) => {
+    const { darkMode } = useContext(AppContext)
     let history = useHistory()
     const element = useRef(null)
     const { show } = useIntersectionObserver(element)
@@ -15,7 +22,7 @@ const CardMain = (props) => {
     }
     
     return(
-        <article className={ styles.CardMain } onClick={ handleClick } ref={ element } >
+        <article className={ darkMode ? `${ styles.CardMain } ${ styles.CardMain__darkMode}`: styles.CardMain } onClick={ handleClick } ref={ element } >
             {
                 show &&
                     <>
