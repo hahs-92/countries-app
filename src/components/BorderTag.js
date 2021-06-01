@@ -30,6 +30,7 @@ const BorderTag = (props) => {
 
     useEffect(() => {
         getDataByCode()
+        // eslint-disable-next-line 
     },[])
 
     

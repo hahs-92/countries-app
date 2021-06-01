@@ -30,6 +30,7 @@ const Country = () => {
 
     useEffect(() => {
         getData()
+        // eslint-disable-next-line 
     },[id])
 
     return(

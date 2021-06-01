@@ -78,7 +78,9 @@ function Home() {
             }
           </div>
           <div className={ darkMode ? `${ styles.Search__input } ${ styles.Search__input__darkMode}`: styles.Search__input }>
-            <input type="text" placeholder='Search for a country...'  onChange={ handleOnChange }/>
+            <label htmlFor="search">
+              <input id='search' type="text" placeholder='Search for a country...'  onChange={ handleOnChange }/>
+            </label>
           </div>
         </article>
 
