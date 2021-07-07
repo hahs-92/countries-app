@@ -6,6 +6,9 @@ import styles from '../styles/components/CardCountry.module.css'
 // ________________________________________________________________________
 
 const CardCountry = (props) => {
+
+    const languagesArr = props.languages.map(item => item.name)
+
     return(
         <article className={ styles.CardCountry }>
                 <section className={ styles.Image }>
@@ -27,7 +30,6 @@ const CardCountry = (props) => {
                     <div className={ styles.Content__info2 }>
                         <div >
                             <h3><strong>Top Level Domain: </strong>{ props.domain }</h3>
-                            {/* <h3><strong>Currencies: </strong>{ props.currencies }</h3> */}
 
                             <h3><strong>Currencies: </strong>
                                 {
@@ -39,12 +41,7 @@ const CardCountry = (props) => {
                             </h3>
 
                             <h3><strong>Languages: </strong>
-                               {
-                                   props.languages &&
-                                    props.languages.map(item => (  
-                                        <span key={ item.name }>{ item.name}  </span> 
-                                    ))
-                               }
+                               { languagesArr.join(', ')}
                             </h3>
                         </div>
                     </div>
@@ -53,8 +50,8 @@ const CardCountry = (props) => {
                         <h3><strong>Border Countries:</strong></h3>
                         <section className={ styles.Info3__Borders }>
                             {
-                                props.borders.map(item => (
-                                    <BorderTag key={ item } tag={ item }/>
+                                props.borders.map((item, index )=> (
+                                    <BorderTag key={ `${ item } ${ index }` } tag={ item }/>
                                 ))
                             }
                         </section>

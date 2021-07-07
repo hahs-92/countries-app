@@ -1,5 +1,5 @@
 import { useEffect,useState, useContext } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, useHistory } from 'react-router-dom'
 //COMPONENTS
 import Header from '../components/Header'
 import CardCountry from '../components/CardCountry'
@@ -17,6 +17,7 @@ const Country = () => {
     const [ data, setData ] = useState([])
     let { id } = useParams()
     id = id.replace(':', '')
+    let history = useHistory()
 
     const getData = async() => {
         try {     
@@ -26,6 +27,10 @@ const Country = () => {
         } catch (error) {
             console.error(error)
         }
+    }
+
+    const handleBack = () => {
+        history.goBack()
     }
 
     useEffect(() => {
@@ -40,18 +45,18 @@ const Country = () => {
             </section>
 
             <section className={  styles.Button }>
-                <div className={ darkMode ? `${ styles.Button__container } ${ styles.Button__container__darkMode}`: styles.Button__container }>
+                <div className={ darkMode ? `${ styles.Button__container } ${ styles.Button__container__darkMode}`: styles.Button__container } onClick={ handleBack }>
                     {
                         darkMode
                             ?
                             <>
                                 <IconLeftArrow width='16' fill='hsl(0, 0%, 100%)'/>
-                                <Link to='/'>Back</Link>
+                                <button type='button' aria-label='back-button' >Back</button>
                             </>
                             :
                             <>
                                 <IconLeftArrow width='16' fill='hsl(0, 0%, 52%)'/>
-                                <Link to='/'>Back</Link>
+                                <button type='button' aria-label='back-button'>Back</button>
                             </>
                     }
                 </div>

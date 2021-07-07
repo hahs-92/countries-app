@@ -16,11 +16,11 @@ import AppContext from '../context/AppContext'
 
 
 function Home() {
-  const { darkMode } = useContext(AppContext)
+  const { darkMode, data,setData } = useContext(AppContext)
   const BASEURL = 'https://restcountries.eu/rest/v2/all'
   const URLNAME = 'https://restcountries.eu/rest/v2/name/'
   const URLREGION = 'https://restcountries.eu/rest/v2/region/'
-  const [ data, setData ]  = useState([])
+  // const [ data, setData ]  = useState([])
   const [ isOptions, setIsOptions ] = useState(false)
 
   const getData = async(url) => {
@@ -55,7 +55,7 @@ function Home() {
   }
 
   useEffect(() => {
-    getData(BASEURL)
+    getData(BASEURL) // eslint-disable-next-line 
   },[])
 
 
@@ -123,9 +123,9 @@ function Home() {
        {
          data.length > 0  
          ?
-          data.map(item => (
+          data.map((item, index )=> (
             <CardMain 
-              key={ item.name } 
+              key={ `${ item.name } ${ index }` } 
               img={ item.flag } 
               title={ item.name } 
               population={ item.population } 
